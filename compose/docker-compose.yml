@@ -9,12 +9,13 @@ services:
       MYSQL_PASSWORD: &openmrs_db_password Admin123
     volumes:
       - openmrs-mysqldata:/var/lib/mysql
+      - ./custom-mysql.cnf:/etc/mysql/conf.d/custom-mysql.cnf
 
   postgresql-openxds:
     container_name: postgresql-openxds
     image: uwitech/postgresql
     ports:
-      - 5432:5432
+      - 5433:5432
     volumes:
       - openxds-pgdata:/var/lib/postgresql/data
 
@@ -30,7 +31,7 @@ services:
   openmrs:
     image: uwitech/oshr
     ports:
-      - "8080:8080"
+      - "8090:8080"
     container_name: openmrs-platform
     depends_on:
       - openmrs-mysql-db
