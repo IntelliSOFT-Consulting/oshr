@@ -9,6 +9,6 @@ cd compose
 docker-compose up`
 ```
 
-After launching, the SHR will be available on `http://localhost:8080/openmrs`. 
+After launching, the SHR will be available on `http://localhost:8090/openmrs`. 
 
 
