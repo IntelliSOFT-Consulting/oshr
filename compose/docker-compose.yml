@@ -16,7 +16,7 @@ services:
     container_name: postgresql-openxds
     image: uwitech/postgresql
     ports:
-      - 5433:5432
+      - 5435:5432
     volumes:
       - openxds-pgdata:/var/lib/postgresql/data
 
