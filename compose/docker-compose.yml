@@ -1,15 +1,16 @@
 version: "2"
 services:
   openmrs-mysql-db:
-    image: uwitech/mysql
+    image: mysql:5.6
     container_name: &db openmrs-mysql
+    ports:
+      - 3307:3306
     environment:
       MYSQL_ROOT_PASSWORD: shr
       MYSQL_USER: &openmrs_db_user admin
       MYSQL_PASSWORD: &openmrs_db_password Admin123
     volumes:
       - openmrs-mysqldata:/var/lib/mysql
-      - ./custom-mysql.cnf:/etc/mysql/conf.d/custom-mysql.cnf
 
   postgresql-openxds:
     container_name: postgresql-openxds
